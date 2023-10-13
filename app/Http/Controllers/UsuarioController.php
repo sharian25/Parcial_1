@@ -29,10 +29,10 @@ class UsuarioController extends Controller
     public function store(Request $request)
     {
             $usuario = new Usuario();
-            $usuario-> nombre =$request -> nombres;
+            $usuario-> nombre =$request -> nombre;
             $usuario-> apellido =$request -> apellido;
             $usuario-> correo =$request -> correo;
-            $usuario-> fecha =$request -> fechaa;
+            $usuario-> fecha =$request -> fecha;
             $usuario-> save();
         return "has Creado un Nuevo Usuario";
     }
@@ -58,12 +58,12 @@ class UsuarioController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $usuario = Usuario::find($id);
-        
-            $usuario-> nombre =$request -> nombres;
+            
+            $usuario = Usuario::all() -> find($id);
+            $usuario-> nombre =$request -> nombre;
             $usuario-> apellido =$request -> apellido;
             $usuario-> correo =$request -> correo;
-            $usuario-> fecha =$request -> fechaa;
+            $usuario-> fecha =$request -> fecha;
             $usuario-> save();
 
             return $usuario;
